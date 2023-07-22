@@ -1,0 +1,298 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BE2AE345-D401-431C-BDC9-2454B6C56E35}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OplcE_Sim_Pro</RootNamespace>
+    <AssemblyName>OplcE_Sim_Pro</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\favicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <WarningLevel>3</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>OplcE_Sim_Pro.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <ItemGroup>
+    <Reference Include="Interop.S7PROSIMLib, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>bin\Debug\Interop.S7PROSIMLib.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Class-Common\CLS.cs" />
+    <Compile Include="Class-Common\zx_EskiKodlar.cs" />
+    <Compile Include="Class-Common\FirstStart.cs" />
+    <Compile Include="Class-Connection_Library\conS7.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Class-PLC\PLC_TiaPortal.cs" />
+    <Compile Include="Class-PLC\PLC_Simatic.cs" />
+    <Compile Include="Class-Common\Var.cs" />
+    <Compile Include="Class-Connection_Library\NetSim\CmdLineArgs.cs" />
+    <Compile Include="Class-Connection_Library\NetSim\Config.cs" />
+    <Compile Include="Class-Connection_Library\NetSim\StationData.cs" />
+    <Compile Include="Class-Connection_Library\NetSim\StationStatus.cs" />
+    <Compile Include="Class-Connection_Library\NetSim\Tools.cs" />
+    <Compile Include="Form_BitByteWord.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_BitByteWord.Designer.cs">
+      <DependentUpon>Form_BitByteWord.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Class-Connection_Library\TcpCon\ByteConvert.cs" />
+    <Compile Include="Class-Connection_Library\TcpCon\HexDump.cs" />
+    <Compile Include="Class-Connection_Library\TcpCon\ISOonTCP\TCPCon.cs" />
+    <Compile Include="Class-Connection_Library\TcpCon\ISOonTCP\TcpServer.cs" />
+    <Compile Include="Class-Connection_Library\TcpCon\ISOonTCP\TPDU\TPDU.cs" />
+    <Compile Include="Class-Connection_Library\TcpCon\ISOonTCP\TPDU\TPDUConnection.cs" />
+    <Compile Include="Class-Connection_Library\TcpCon\ISOonTCP\TPDU\TPDUData.cs" />
+    <Compile Include="Class-Connection_Library\TcpCon\ISOonTCP\TPKT\TPKT.cs" />
+    <Compile Include="Class-Connection_Library\TcpCon\IsoToS7online.cs" />
+    <Compile Include="Class-Connection_Library\TcpCon\S7online\PlcS7onlineMsgPump.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class-Connection_Library\TcpCon\S7online\PlcS7onlineMsgPumpS7.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class-Connection_Library\TcpCon\S7online\PlcS7onlineMsgPumpTia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Class-Connection_Library\TcpCon\S7ProtoHook.cs" />
+    <Compile Include="Class-Common\XMLFiles_RW.cs" />
+    <Compile Include="SimConnection.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_BitByteWord.resx">
+      <DependentUpon>Form_BitByteWord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Class-Connection_Library\TcpCon\S7online\PlcS7onlineMsgPump.resx">
+      <DependentUpon>PlcS7onlineMsgPump.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="Class-Connection_Library\TcpCon\app.config" />
+    <None Include="Class-Connection_Library\TcpCon\ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.SQL.Server.Compact.3.5">
+      <Visible>False</Visible>
+      <ProductName>SQL Server Compact 3.5 SP2</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.10.0">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2008 Express</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.4.5">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 4.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\favicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bits.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bits_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox_OFF1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox_ON1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\checkbox_ON31.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lamba_Kirmizi_OFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lamba_Kirmizi_ON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lamba_Yesil_OFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lamba_Yesil_ON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MandalButon_OFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MandalButon_ON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Motor_Off.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Motor_Run.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piston_OFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\piston_ON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YayliButon_Kirmizi_OFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YayliButon_Kirmizi_ON.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YayliButon_Yesil_OFF.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\YayliButon_Yesil_ON.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
